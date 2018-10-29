@@ -1,0 +1,41 @@
+
+<div  id="slide-out" class="sidenav row " >
+  <form id="settings" class="col s12">
+    <div class=" col s8">
+      {{#each parameters}}
+      <div class="input-field col s6 ">
+        <label> {{@key}}</label>
+        <input id="{{@key}}" type="text" value="{{this}}" placeholder=" {{@key}}">        
+      </div>
+      {{/each}}
+    </div>
+
+     <div class="input-field col s2">
+       <div class="chip">Campos de la notas</div>
+       {{#each fields }} 
+       <div>
+         <label>
+          <input type="checkbox" class="filled-in" name="fields" checked="checked"  value="{{this}}" />
+          <span>{{this}}</span>
+        </label>
+      </div>
+      {{/each}}  
+    </div>
+
+    <div class="input-field col s2">
+        <div class="chip"> Tipo de notas</div>
+        {{#each typeNotes }} 
+        <p>
+          <label>
+            <input type="checkbox"  name='types' value="{{this}}" />
+            <span>{{this}}</span>
+          </label>
+        </p>
+        {{/each}}  
+
+      </div>
+      <div class="row">
+          <input type ="submit" class ="btn waves-effect waves-light updateUrl" value = "Send"/>
+      </div>   
+  </form>
+</div>
