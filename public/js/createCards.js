@@ -1,7 +1,5 @@
-function CreateCards ({title , summary, images  }){
-console.log( );
+CreateCards = ({title , summary, images  })=> {
 let card = `
-
   <div class="row">
     <div class="col s12 m7">
       <div class="card">
@@ -19,8 +17,7 @@ let card = `
         </div>
       </div>
     </div>
-  </div>
-            
+  </div>            
 
 `;
 

@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/css/prism.css">
+    <script src="/js/prism.js"></script>
+
 
 
     <!-- Compiled and minified JavaScript -->
@@ -25,8 +28,20 @@
    </div>
    
 
-   <script src="js/custom/jsonp.js"></script>
-   <script src="js/createCards.js"></script>
-   <script src="js/init.js"></script>
- </body>
- </html>
+   {{>footerScrtisps}}
+   <script type="text/javascript">
+     Prism.plugins.NormalizeWhitespace.setDefaults({
+  'remove-trailing': true,
+  'remove-indent': true,
+  'left-trim': true,
+  'right-trim': true,
+  /*'break-lines': 80,
+  'indent': 2,
+  'remove-initial-line-feed': false,
+  'tabs-to-spaces': 4,
+  'spaces-to-tabs': 4*/
+});
+   </script>
+
+  </body>
+  </html>

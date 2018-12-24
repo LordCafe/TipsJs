@@ -1,0 +1,23 @@
+<div id="snippet">
+	<pre>
+		<code id="school" class="language-javascript">
+			let Scrtips = document.querySelectorAll("script");
+			let Items = Array.from(Scrtips).map(( Index  )=>{ 	
+				let List = `<li class="collection-item">${Index.src}</li>`;
+				let Target = document.querySelector(".collection");
+				Target.insertAdjacentHTML('beforeend', List);
+				return List;
+			});
+	</code>
+</pre>
+
+</div>
+
+
+<div>
+	<a class="waves-effect waves-light btn">button</a>
+	<a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>button</a>
+	<a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>button</a>
+	<ul class="collection">		
+	</ul>
+</div>
