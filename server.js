@@ -3,6 +3,7 @@ const hbs = require('express-handlebars');
 var app = express();
 var path    = require("path");
 const PUBLIC = path.join(__dirname + '/public');
+require('./school/routes')(app);
 
 app.use(express.static(PUBLIC));
 
