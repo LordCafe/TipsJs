@@ -1,11 +1,4 @@
-let Scrtips = document.querySelectorAll("script");
-let Items = Array.from(Scrtips).map(( Index  )=>{ 	
-	let List = `<li class="collection-item" onclick=GetFileCLick(this)>${Index.src}</li>`;
-	return List;
-});
 
-let Target = document.querySelector(".collection");
-Target.insertAdjacentHTML('beforeend',Items);
 
 
 //Get file with a fetch method
