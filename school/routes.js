@@ -12,8 +12,20 @@ module.exports = function(app){
 			'/js/scope/mycard.js',
 			'/js/scope/functions.js',
 			'/js/scope/hoisting.js',
+			]
+		});
+	});
 
-
+	app.get('/school/conceptthis', function(req, res){
+		res.render('school/this', {
+			title: 'Concepto del this',
+			links :{
+			   yeisondaza : 'https://yeisondaza.com/entendiendo-this-javascript'
+			   'youtube' : 'https://www.youtube.com/watch?v=gvicrj31JOM'
+			},
+			footerScrtisps :[
+			'/js/SeeCode.js',
+			'/js/scope/loadClass.js',			
 			]
 		});
 	});

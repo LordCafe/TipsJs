@@ -1,6 +1,8 @@
 //Cambiando mi carro con una funcion;
 function seelocal(){
+ 	console.log(this);
  	console.log(yourCar, MylocalVariable);
+
 }
 
 function changeCars(){
