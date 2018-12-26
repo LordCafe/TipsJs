@@ -1,0 +1,118 @@
+<h2>Javascript</h2>
+<div class="row">
+	
+	<div class="col s12 m12">
+		<div class="card-content black-text">
+			<p>JavaScript esta diseñado en un paradigma basado en objetos (WTF que es un objeto!!). Un objeto basicamente es 
+                una coleccion de propiedades
+                
+                <br>
+                <br>
+
+                (Propiedad ??!!)  una propiedad es basicamente una asociación entre un nombre y un valor,
+                donde un valor puede ser una función, una variable ó una cadena de texto.
+
+                <br>
+                <br>
+
+                Teniendo en cuenta lo anterior vamos a hablar de arreglos, son una colección de elementos contiguos, más bien una estructura que nos permite almacenar secuencialmente datos, no necesariamente en orden. ¿Qué tipo de datos?, en el caso de Javascript, cualquiera, pero en general se almacenan datos del mismo tipo.
+
+                <br>
+                <br>
+
+                ¿Cómo definimos un arreglo? Para este punto existen varias formas, pasemos a revisar algunas.
+			</p>
+		</div>
+	</div>
+
+
+	<div class="col s12 m12">
+
+		<h4>Ilustremos las diferentes formas de crear un array</h4>
+		<div class="col s12 m12">
+			<div class="card-content black-text  hoverable">
+				<p> Usando el constructor new Array() tendremos una opcion extra para pasarsela como parametro, si tu le pasas un numero al constructor crearas un arreglo con dicho valor. </p>
+			</div>			
+		</div>
+
+		<pre>
+			<code id="scope" data-script='dataStructure/arrayConstructor.js' class="language-javascript"></code>
+		</pre>
+
+        <div class="col s12 m12">
+			<div class="card-content black-text  hoverable">
+				<p> Usando el literal [] ------> (La forma mas comun y recomendable de crear arreglos). </p>
+			</div>			
+		</div>
+
+		<pre>
+			<code id="scope" data-script='dataStructure/arrayLiteral.js' class="language-javascript"></code>
+		</pre>
+	</div>	
+
+
+	<div class="col s12 m12">
+
+		<h4>Metodos de arreglos</h4>
+		<div class="col s12 m12">
+			<div class="card-content black-text  hoverable">
+				<p> Como mencione al inicio de este articulo, todo en javascript es un objeto y los arreglos no son la exepción. Estos métodos nos permiten operar sobre los elementos del arreglo, incluso modificar su contenido. Alguno de estos métodos los paso a describir a continuación:
+                </p>
+
+			</div>	
+                <ul class="collection col s6">
+                    <li class="collection-item">Agregar elementos (al comienzo o al final).</li>
+                    <li class="collection-item">Buscar elementos.</li>
+                    <li class="collection-item">Eliminar elementos (al comienzo o al final).</li>
+                </ul>    		
+		</div>
+
+        <div class="col s12 m12 ">
+                <p>Para agregar elementos tenemos dos métodos push y unshift .
+                    push: agrega un nuevo elemento al final del arreglo.
+                    unshift: agrega un nuevo elemento al comienzo del arreglo.</p>
+
+        </div>
+
+		<pre>
+			<code id="scope" data-script='dataStructure/arrayPush.js' class="language-javascript"></code>
+		</pre>
+
+        <div class="col s12 m12">
+            
+            <p>Para buscar elementos podemos usar indexOf , find , findIndex
+            
+            <br>
+            
+            <ul class="collection col s12">
+                <li class="collection-item">indexOf : Retorna el indice donde se encuentra el elemento buscado, sino se encuentra el elemento retorna -1 .</li>
+                <li class="collection-item">find : Retorna el elemento buscado según la condición lógica que se escribe en el callback.</li>
+                <li class="collection-item">findIndex : Retorna el indice del elemento que cumple una condición lógica, si ningún elemento cumple con dicha condición, findIndex retorna -1 .</li>
+            </ul>
+		</div>
+
+		<pre>
+			<code id="scope" data-script='dataStructure/arrayFind.js' class="language-javascript"></code>
+		</pre>
+	</div>	
+
+
+        <div class="col s12 m12">
+            
+            <p>Y finalmente para eliminar elementos podemos utilizar pop ó shift
+
+            <br>
+            
+            <ul class="collection col s12">
+                <li class="collection-item">pop() Borra un elemento al final del array.</li>
+                <li class="collection-item">shift() Borra un elemento al comienzo del array.</li>
+            </ul>
+
+        <pre>
+		    <code id="scope" data-script='dataStructure/arrayDelete.js' class="language-javascript"></code>
+		</pre>
+
+		</div>
+
+
+</div>
