@@ -40,8 +40,9 @@ module.exports = function(app){
 		res.render('school/this', {
 			title: 'Concepto del this',
 			links :{
-			   yeisondaza : 'https://yeisondaza.com/entendiendo-this-javascript'
-			   'youtube' : 'https://www.youtube.com/watch?v=gvicrj31JOM'
+			   yeisondaza : 'https://yeisondaza.com/entendiendo-this-javascript',
+			   'youtube' : 'https://www.youtube.com/watch?v=gvicrj31JOM',
+			   'https://codeburst.io' : 'https://codeburst.io/javascript-functions-understanding-the-basics-207dbf42ed99'
 			},
 			footerScrtisps :[
 			'/js/SeeCode.js',
