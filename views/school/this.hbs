@@ -2,47 +2,102 @@
 
 <div>
 
+	<h5>Contexto globalSection</h5>
+	<p>En el contexto de ejecución global (fuera de cualquier función), this se refiere al objeto global, ya sea en modo estricto o no.</p>
 	<pre>
-		<code data-script='functions.js' class="language-javascript"></code>
-	</pre>
-	<p>	
-		En la mayoría de los casos, el valor de esto está determinado por cómo se llama una función. 
-	</p>
-	<blockquote>
-		No se puede establecer por asignación durante la ejecución, y puede ser diferente cada vez que se llama a la función.
-	</blockquote>
+		<code class="language-javascript">
+			console.log(this.document === document); // true
 
-	<pre>
-		<code data-script='usecar.js'  class="language-javascript">
-			
+			// En los navegadores web, el objeto window también es un objeto global:
+			console.log(this === window); // true
+
+			this.a = 37;
+			console.log(window.a); // 37
 		</code>
 	</pre>
-	
+</div>
 
-	<blockquote>
-		ES5 introdujo el método bind () para establecer el valor de esto de una función independientemente de cómo se llame
 
+
+<div>
+
+	<h5>Contexto de la función</h5>
+	<p>El valor de this está determinado por cómo se llama una función.</p>
+	<div class="card-panel hoverable"> 
+		<blockquote>En este caso, el valor de this no está establecido	 por la llamada. Dado que el código no está en modo estricto, el valor de this debe ser siempre un objeto por lo que por defecto es el objeto global.
+		</blockquote>
 		<pre>
 			<code class="language-javascript">
-				let MiguelCar =  Mycar.bind({ type: 'no sirve' , model : 'volvo'});
-				MiguelCar();	
+				function f1(){
+				return this;
+			}
 
-			</code>
-		</pre>
-	</blockquote>
-	
-
-
-
-
-	<blockquote>
-		ES2015 introdujo funciones de flecha que no proporcionan su propia vinculación (conserva este valor del contexto léxico adjunto).
-
-	</blockquote>
-	
-
+			f1() === window; // objeto global
+		</code>
+	</pre>
+</div>
 
 </div>
+<div class="card-panel hoverable"> 
+	<blockquote>
+		En modo estricto, el valor de this se mantiene en lo que está establecida al entrar en el contexto de ejecución. Si no está definido, permanece undefined. También se puede ajustar a cualquier valor, tales como null o 42 o "Yo no soy this".
+	</blockquote>
+
+	<pre>
+		<code class="language-javascript">
+			function f2(){
+			"use strict"; // consultar modo estricto
+			return this;
+		}
+
+		f2() === undefined;
+	</code>
+
+</pre>
+</div>
+
+
+
+<div class="card-panel hoverable"> 
+	<h5>Como un método de un objeto</h5>
+	<blockquote>
+		Cuando una función es llamada como un método de un objeto, el this cambia por el metodo del objeto llamado.
+		En el siguiente ejemplo, cuando Mycar.f() es invocado, dentro de la función this es ligado al objeto Mycar.
+	</blockquote>
+	<pre><code data-script='functions.js' class="language-javascript"></code></pre>
+	<pre><code data-script='usecar.js' class="language-javascript"></code></pre>
+</div>
+
+<div class="card-panel hoverable">
+	<blockquote>
+		ES5 introdujo el método bind () para establecer el valor de this de una función independientemente de cómo se llame		
+	</blockquote>
+	<pre><code class="language-javascript" data-script='bind.js'></code></pre>
+</div>
+
+
+
+<div class="card-panel hoverable"> 
+	
+	<blockquote>
+	ES2015 introdujo funciones de flecha que no proporcionan su propia vinculación (conserva este valor del contexto léxico adjunto).	
+	</blockquote>
+	<pre><code class="language-javascript" data-script='arrow.js'></code></pre>
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <script type="text/javascript">

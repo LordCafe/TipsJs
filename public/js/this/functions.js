@@ -1,20 +1,9 @@
-function Mycar(){
-	
-	this.model='licoln';
-	this.year ='2019';
-	this.owner = false;
+var Mycar = { name: 'lincoln'};
 
-	
-	this.data = function(){
-		console.log( 'Este carro es ', this.model, 'Construido en el año : ' , this.year );
-		console.log( ' this :',this);
-
-	}
-
-
-
-    return this;
-
+function independent() {
+  return this.name;
 }
 
+Mycar.f = independent;
 
+console.log(Mycar.f()); // logs 37

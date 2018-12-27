@@ -40,6 +40,7 @@ module.exports = function(app){
 		res.render('school/this', {
 			title: 'Concepto del this',
 			links :{
+				'developer.mozilla' : 'https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/this',
 			   yeisondaza : 'https://yeisondaza.com/entendiendo-this-javascript',
 			   'youtube' : 'https://www.youtube.com/watch?v=gvicrj31JOM',
 			   'https://codeburst.io' : 'https://codeburst.io/javascript-functions-understanding-the-basics-207dbf42ed99'
@@ -47,7 +48,10 @@ module.exports = function(app){
 			footerScrtisps :[
 			'/js/SeeCode.js',
 			'/js/this/functions.js',
-			'/js/this/usecar.js'	
+			'/js/this/usecar.js',
+			'/js/this/bind.js',
+			'/js/this/arrow.js'
+
 
 			]
 		});

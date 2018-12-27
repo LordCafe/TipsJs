@@ -1,14 +1,9 @@
-Mycar();// this sera window
-let AdrianCar = new Mycar(); //this sera la  instancia;
-AdrianCar.data();
-
-
-function seeThis(){
-  console.log(this);
+function CreateCar(){
+	return this;
 }
+console.log(CreateCar());// this === window;
 
-console.log(seeThis());
-let MiguelCar =  Mycar.bind({ type: 'no sirve', see : seeThis});
 
- let miguel = MiguelCar();
- miguel.see();
+let MichaleCar = new CreateCar();
+console.log(MichaleCar); // this  === CreateCar;
+
