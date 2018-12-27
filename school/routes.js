@@ -95,9 +95,27 @@ module.exports = function(app){
 	});
 
 
-	app.get('/school/data', function(req, res){
-		res.render('school', {
-			title: 'Values, Types, and Operators'
+	app.get('/school/dom', function(req, res){
+		res.render('school/Dom', {
+			title: 'DOM',
+			links :{
+				'Mozilla' : 'https://developer.mozilla.org/es/docs/Referencia_DOM_de_Gecko/Introducci%C3%B3n'
+			},
+		});
+	});
+
+	app.get('/school/Manipultiondom', function(req, res){
+		res.render('school/ManipulationDom', {
+			title: 'DOM',
+			links :{
+				'Mozilla' : 'https://developer.mozilla.org/es/docs/Referencia_DOM_de_Gecko/Introducci%C3%B3n',
+				'xxx' <:></:>'https://www.sitepoint.com/dom-manipulation-vanilla-javascript-no-jquery/',
+			},
+			footerScrtisps :[
+			'/js/dom/dom.js',
+			'/js/SeeCode.js',
+			'/js/dom/show.js'			
+			]
 		});
 	});
 
