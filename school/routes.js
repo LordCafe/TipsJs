@@ -46,7 +46,9 @@ module.exports = function(app){
 			},
 			footerScrtisps :[
 			'/js/SeeCode.js',
-			'/js/scope/loadClass.js',			
+			'/js/this/functions.js',
+			'/js/this/usecar.js'	
+
 			]
 		});
 	});
@@ -57,11 +59,37 @@ module.exports = function(app){
 		});
 	});
 
+
+
 	app.get('/school/functions', function(req, res){
-		res.render('school', {
-			title: 'Values, Types, and Operators'
+		res.render('school/functions', {
+			title: 'Concepto del this',
+			links :{
+			   yeisondaza : 'https://yeisondaza.com/entendiendo-this-javascript',
+			   'youtube' : 'https://www.youtube.com/watch?v=gvicrj31JOM',
+			   'https://codeburst.io' : 'https://codeburst.io/javascript-functions-understanding-the-basics-207dbf42ed99'
+			},
+			footerScrtisps :[
+			'/js/SeeCode.js',
+			'/js/this/functions.js'			
+			]
 		});
 	});
+
+
+		app.get('/school/methods', function(req, res){
+		res.render('school/methods', {
+			title: 'Metodos',
+			links :{
+
+			},
+			footerScrtisps :[
+			'/js/SeeCode.js',
+			'/js/methods/methods.js'			
+			]
+		});
+	});
+
 
 	app.get('/school/data', function(req, res){
 		res.render('school', {

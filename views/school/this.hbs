@@ -1,60 +1,69 @@
-<h3>The functions</h3>
+<h3> El concepto de this</h3>
 
 <div>
-	<div>Una declaracion de funcion , define un nombre de función.</div>
-	<p>
-		Para crear una declaracion de función , se tiene que usar la palabra clave, <span class="red-text">function</span>, seguido por el nombre la funcion.
-	</p>
-	<p>
-		Cuando se la declaracion de funcion, la funcion es <span class="red-text">hoisted</span>,permitiendo que esta funcion este disponible antes de que se declare.
-	</p>
 
 	<pre>
-		<code class="language-javascript">
-			function MyAmazingFunction(){
-
-		}
-	</code>
-</pre>
-</div>
-
-
-<h3>Expresiones de funciones</h3>
-
-<div>
-
-	<p>
-		Expresiones de función define una función nombrada o anónima. 
+		<code data-script='functions.js' class="language-javascript"></code>
+	</pre>
+	<p>	
+		En la mayoría de los casos, el valor de esto está determinado por cómo se llama una función. 
 	</p>
-	<p>
-		Una función anónima es una función que no tiene nombre. Las expresiones de funciones no se  <span class="red-text">hoisted</span> y, por lo tanto, no se pueden usar antes de que se definan. En el siguiente ejemplo, estamos configurando el objeto de función anónimo igual a una variable.
-	</p>
+	<blockquote>
+		No se puede establecer por asignación durante la ejecución, y puede ser diferente cada vez que se llama a la función.
+	</blockquote>
+
+	<pre>
+		<code data-script='usecar.js'  class="language-javascript">
+			
+		</code>
+	</pre>
 	
-	<pre>
-		<code class="language-javascript">
-			let MoreAmazingFunction = function(parameters){
 
-		}
-	</code>
-</pre>
-</div>
+	<blockquote>
+		ES5 introdujo el método bind () para establecer el valor de esto de una función independientemente de cómo se llame
 
+		<pre>
+			<code class="language-javascript">
+				let MiguelCar =  Mycar.bind({ type: 'no sirve' , model : 'volvo'});
+				MiguelCar();	
 
-<h3> Arrow Function Expression</h3>
-
-<div>
-
-
-	<p>
-		
-		Una expresión de función de flecha es una sintaxis más corta para escribir expresiones de función. Las funciones de flecha no crean su propio valor.<span class="red-text">this</span>
-	</p>
+			</code>
+		</pre>
+	</blockquote>
 	
-	<pre>
-		<code class="language-javascript">
-		let name = (parameters) => {
-		
-		}
-	</code>
-</pre>
+
+
+
+
+	<blockquote>
+		ES2015 introdujo funciones de flecha que no proporcionan su propia vinculación (conserva este valor del contexto léxico adjunto).
+
+	</blockquote>
+	
+
+
 </div>
+
+
+<script type="text/javascript">
+
+	document.addEventListener('readystatechange', event => {
+
+		if (event.target.readyState === "complete") {
+			let ClassScripts = document.querySelectorAll('code');
+			let SetFolder = '/js/this/';
+			Array.from(ClassScripts).map(( data )=>{
+				if(data.dataset.script){
+					let myfile = SetFolder + data.dataset.script;
+					GetFile(myfile,function( script ){		
+						data.innerHTML = script;
+						Prism.highlightElement( data );
+					});		
+				}
+			});
+		}
+
+	});
+
+
+</script>

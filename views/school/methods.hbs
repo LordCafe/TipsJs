@@ -1,0 +1,61 @@
+<h3>Metodos</h3>
+
+<div>
+	<pre>
+		<code class="language-javascript" data-script='methods.js'>
+
+		</code>
+	</pre>
+	<p>	
+		Un método es un fragmento de código que se llama con un nombre que está asociado con un objeto. En la mayoría de los aspectos, es idéntico a una función, excepto por dos diferencias clave:
+
+
+	</p>
+
+	<blockquote>	
+		A un método se le pasa implícitamente el objeto sobre el que fue llamado.
+	</blockquote>
+
+<pre>
+
+	<code class="language-javascript">MyMagicObject.wow()</code>
+	</pre>
+
+	<blockquote>
+		Un método puede operar con datos que están contenidos dentro de la clase (recordando que un objeto es una instancia de una clase - la clase es la definición, el objeto es una instancia de esos datos).
+	</blockquote>	
+	<pre>
+
+		
+		<code class="language-javascript">
+			wow : function(){
+				console.log(this.myObject);// tiene acceso
+				console.log(this === window , this);
+		}//metodo
+		</code>
+	</pre>
+</div>
+
+
+<script type="text/javascript">
+
+	document.addEventListener('readystatechange', event => {
+
+		if (event.target.readyState === "complete") {
+			let ClassScripts = document.querySelectorAll('code');
+			let SetFolder = '/js/methods/';
+			Array.from(ClassScripts).map(( data )=>{
+				if(data.dataset.script){
+					let myfile = SetFolder + data.dataset.script;
+					GetFile(myfile,function( script ){		
+						data.innerHTML = script;
+						Prism.highlightElement( data );
+					});		
+				}
+			});
+		}
+
+	});
+
+
+</script>
