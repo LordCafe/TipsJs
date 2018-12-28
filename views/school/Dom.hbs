@@ -1,0 +1,101 @@
+<div id="MasterDom">
+	<h5>¿Que es el Dom?</h5>
+	<blockquote>
+		El modelo de objeto de documento (DOM) es una interfaz de programación para los documentos HTML y XML
+	</blockquote>
+
+	
+	<blockquote>
+		El DOM fue diseñado para ser independiente de cualquier lenguaje de programación particular, hace que la presentación estructural del documento sea disponible desde un simple y consistente API.
+	</blockquote>
+
+
+	
+	<div class="row">
+		<div class="col s12 m12">
+			<div class="card  darken-1">
+				<div class="card-content black-text">
+					<ul class="collection">
+						<li class="collection-item">Una página web es un documento. Éste documento puede exhibirse en la ventana de un navegador o también como código fuente HTML. Pero, en los dos casos, es el mismo documento.</li>
+						<li class="collection-item">El modelo de objeto de documento (DOM) proporciona otras formas de presentar, guardar y manipular este mismo documento.
+						</li>
+						<li class="collection-item">El DOM es una representación completamente orientada al objeto de la página web y puede ser modificado con un lenguaje de script como JavaScript.</li>						
+					</ul>
+
+					
+				</div>				
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="col s12 m12">
+			<div class="card  darken-1">
+				<div class="card-content black-text">
+					<span class="card-title">¿Cómo se accede al DOM?</span>
+					<p>
+						Cuando se crea un script –esté en un elemento SCRIPT o incluido en una página web por la instrucción de cargar un script– inmediatamente está disponible para usarlo con el API, accediendo así a los elementos 
+						<span class="red-text">document</span> o <span class="red-text">window</span>, para manipular el documento mismo o sus diferentes partes, las cuales son los varios elementos de una página web. 
+					</p>
+				</div>				
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s12 m12">
+			<div class="card  darken-1">
+				<div class="card-content black-text">
+					<span class="card-title">document</span>
+					<p>
+						El objeto document es el que tiene el contenido de toda la página que se está visualizando. Esto incluye el texto, imágenes, enlaces, formularios, ... Gracias a este objeto vamos a poder añadir dinámicamente contenido a la página, o hacer cambios, según nos convenga.
+					</p>
+				</div>				
+			</div>
+		</div>
+
+		<div class="col s12 m12">
+			<div class="card  darken-1">
+				<div class="card-content black-text">
+					<span class="card-title">element</span>
+					<p>
+						Se refiere a un elemento o a un nodo de tipo de elemento "<code>element</code>" devuelto por un miembro del API de DOM. 
+					</p>
+
+					<p>Dicho de otra manera, por ejemplo, el método <code>document.createElement()</code> devuelve un objeto referido a un <code>nodo</code> <span class="blue-grey-text hoverable ">"Lo que significa que este método devuelve el elemento que acaba de ser creado en el DOM."</span> </p>
+					<br/>
+					<p>Los objetos <code>element</code> ponen en funcionamiento a la interfaz <code>Element</code> del DOM y también a la interfaz de nodo "<code>Node</code>" más básica, las cuales son incluidas en esta referencia.
+					</p>
+
+					<pre><code class="language-javascript">
+					 let MyDiv = document.createElement('div');//Crea un elemento DIV;
+					 console.log(MyDiv)
+					</code></pre>
+				</div>				
+			</div>
+		</div>
+
+		<div class="col s12 m12">
+			<div class="card  darken-1">
+				<div class="card-content black-text">
+					<span class="card-title">NodeList</span>
+					<p>
+						Un objeto NodeList es una lista (colección) de nodos extraídos de un documento.
+					</p>
+
+				
+					<pre><code class="language-javascript">
+					let AllDivs =  document.querySelectorAll('div');
+
+					</code></pre>
+				</div>				
+			</div>
+		</div>
+
+
+
+
+	</div>
+
+</div>

@@ -109,7 +109,7 @@ module.exports = function(app){
 			title: 'DOM',
 			links :{
 				'Mozilla' : 'https://developer.mozilla.org/es/docs/Referencia_DOM_de_Gecko/Introducci%C3%B3n',
-				'xxx' <:></:>'https://www.sitepoint.com/dom-manipulation-vanilla-javascript-no-jquery/',
+				'sitepoint' :'https://www.sitepoint.com/dom-manipulation-vanilla-javascript-no-jquery/',
 			},
 			footerScrtisps :[
 			'/js/dom/dom.js',

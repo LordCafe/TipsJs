@@ -1,0 +1,102 @@
+<div id="ManipularDom"  data-id="1234567890" data-user="johndoe" data-date-of-birth>
+	
+	<h5>Manipular el DOM</h5>
+	<div class="row">
+		<div class="col s12">
+
+			<blockquote>
+				<span>DOM Moverse en el Node </span>
+				<pre><code class="language-javascript">
+					let myElement = document.querySelector('#ManipularDom'); 
+					myElement.childNodes
+					myElement.firstChild
+					myElement.lastChild
+					myElement.previousSibling
+					myElement.nextSibling
+					myElement.parentNode
+					myElement.parentElement
+				</code></pre> 
+
+
+			</blockquote>
+		</div>
+		<div class="col s12">
+			
+			<blockquote>
+				<span>Modificando Clases y atributos</span>
+				<pre><code class="language-javascript">
+
+					myElement.classList.add('foo');
+					myElement.classList.remove('bar');
+					myElement.classList.toggle('baz');
+					//Obteniendo data Custom
+					myElement.dataset.id;
+
+					//Cambiando data Custom
+					myElement.dataset.id = 1000;					
+
+				</code></pre> 
+
+
+			</blockquote>
+		</div>
+		<div class="col s12">
+			<blockquote>
+				<span>Manipulacion Dom</span>
+				<pre><code class="language-javascript">
+				// Creando un elemento nuevo
+				  let NewElement = document.createElement('p');
+				  NewElement.textContent = 'Quiero un avion y un carro';
+				  NewElement.classList.add('red-text');
+				  NewElement.dataset.createBy ='Adrian';
+				 
+				 //Insertando  nuevo elemento
+
+				let parent = document.querySelector('#example-manipulacion');
+				parent.appendChild(NewElement);
+				//Eliminado  new element
+				NewElement.remove();
+
+				</code></pre> 
+
+
+			</blockquote>
+
+
+		</div>
+		<div class="col s12">
+			<pre><code data-script='dom.js' class="language-javascript"></code></pre>
+			<pre><code data-script='show.js' class="language-javascript"></code></pre>
+		</div>
+		<div class="col s12">
+			<a class="waves-effect waves-light btn" onclick="SeeManipulation()"> Ve el codigo ejecutarse</a>
+			<a  id='deleteActions' class="waves-effect waves-light btn">Borrar acciones </a>
+			<blockquote id="example-manipulacion">
+				
+			</blockquote>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+
+	document.addEventListener('readystatechange', event => {
+
+		if (event.target.readyState === "complete") {
+			let ClassScripts = document.querySelectorAll('code');
+			let SetFolder = '/js/dom/';
+			Array.from(ClassScripts).map(( data )=>{
+				if(data.dataset.script){
+					let myfile = SetFolder + data.dataset.script;
+					GetFile(myfile,function( script ){		
+						data.innerHTML = script;
+						Prism.highlightElement( data );
+					});		
+				}
+			});
+		}
+
+	});
+
+
+</script>
