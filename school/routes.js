@@ -119,5 +119,19 @@ module.exports = function(app){
 		});
 	});
 
+	app.get('/school/practicas', function(req, res){
+		res.render('school/practicas', {
+			title: 'Practica',
+			links :{
+				'Mozilla' : 'https://developer.mozilla.org/es/docs/Referencia_DOM_de_Gecko/Introducci%C3%B3n',
+				'sitepoint' :'https://www.sitepoint.com/dom-manipulation-vanilla-javascript-no-jquery/',
+			},
+			footerScrtisps :[
+			'/js/practicas/practicas.js',
+						
+			]
+		});
+	});
+
     //other routes..
 }
