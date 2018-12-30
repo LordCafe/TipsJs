@@ -1,0 +1,96 @@
+<div class="row">
+	<div class="col s12">
+		<div class="row">
+			<div class="col s12">
+				<a class="waves-effect waves-light blue btn" onclick="clickButton()">button</a>
+				<pre><code  class="language-javascript" data-scriptid='onclick' ></code></pre>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col s12">
+			    <a id="element" class="waves-effect waves-light black btn"><i class="material-icons left">cloud</i>button</a>
+				<pre><code  class="language-javascript" data-scriptid='script-element' ></code></pre>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col s12">
+			   <a id="Listener" class="waves-effect waves-light  red btn"><i class="material-icons right">cloud</i>button</a>
+				<pre><code  class="language-javascript" data-scriptid='script-listener' ></code></pre>
+			</div>
+		</div>
+		
+
+		<div class="row">
+			<div class="col s12">
+			   <a id="querySelector" class="waves-effect waves-light  grey btn"><i class="material-icons right">cloud</i>button</a>
+				<pre><code  class="language-javascript" data-scriptid='script-query' ></code></pre>
+			</div>
+		</div>
+		
+		
+		
+		
+	</div>
+</div>
+
+<script type="text/javascript" id="onclick">
+function clickButton(){
+ console.log(this);
+
+}
+	
+</script>
+
+<script type="text/javascript" id="script-element">
+	
+
+ element.onclick = function(){
+ 	console.log('hehehe');
+ }
+
+ document.getElementById( 'element').onclick = function(){
+ 	console.log( this.parentNode);
+ }
+</script>
+
+<script type="text/javascript" id="script-listener">
+	document.getElementById('Listener').addEventListener( 'click',function(){
+		console.log( this );
+	})
+</script>
+
+<script type="text/javascript" id="script-query">
+	
+	querySelector.addEventListener('click', function(){
+		console.log('Ya son una variable global  :) ');
+	})
+	document.querySelector('#querySelector').addEventListener( 'click',function(){
+		console.log( this );
+	});
+
+	document.getElementById('querySelector').addEventListener( 'click',function(){
+		console.log( this, 'two' );
+	})
+</script>
+
+
+<script type="text/javascript">
+
+	document.addEventListener('readystatechange', event => {
+
+		if (event.target.readyState === "complete") {
+			let ClassScripts = document.querySelectorAll('code');
+
+			Array.from(ClassScripts).map(( data )=>{				
+				if(data.dataset.scriptid){
+					let Script = document.querySelector(  `script[id="${ data.dataset.scriptid}"]`);
+					data.innerHTML =Script.innerHTML;
+					Prism.highlightElement( data );	
+				}
+			});
+		}
+	});
+
+</script>

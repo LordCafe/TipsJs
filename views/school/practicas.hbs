@@ -1,275 +1,282 @@
-
-
-<div>
-	<ul class="collapsible">
-
-		<li>
-			<div class="collapsible-header"><i class="material-icons">whatshot</i>Informacion en un objecto</div>
-			<div class="collapsible-body">
-
-				<blockquote>
-					En esta pagina esta declarado este objecto :<span class="chip"> ClueGame</span>
-					<p>Sabemos por la forma que esta declarado, se puede considerar
-						parte del <span class="red-text chip">Global Scope</span></p>
-					</blockquote>
-					<pre><code class="language-javascript" data-scriptid ='objecto'></code></pre>
-
-				</div>
-			</li>
-		</ul>
-
-
-		<div class="card-panel hoverable">
-			<h5>Creando  images</h5>
-
-			<blockquote>Esta funcion , recibe un parametro <span class="chip"> nameImage </span> y usa la variable global 
-				<span class="chip"> folderImg </span>y el parametro que es parte del this <span class="chip">folder</span>
-				para crear el <span class="red-text">SRC</span> del elemento img que esta creando
-			</blockquote>
-
-
-			<blockquote>
-				<code class="language-javascript">this.target</code> representa un elemento, que es parte del dom, al que se le insertara, la nueva imagen
-				recien creada
-			</blockquote>
-
-			<ul class="collapsible">
-				<li>
-					<div class="collapsible-header"><i class="material-icons">whatshot</i>Ver funcion</div>
-					<div class="collapsible-body">
-						<pre><code class="language-javascript" data-scriptid='CreateImg'></code></pre>	
-					</div>
-				</li>
-			</ul>
+		<div class="row">
+			<div class="col s12">
+				<a class="waves-effect waves-light btn-small clue-practice" 
+				data-folder='personajes'
+				data-info='Personajes'
+				data-target='PersonajesImg'
+				data-action='show'
+				>Ver personajes</a>
+				<a class="waves-effect waves-light btn-small clue-practice" 
+				data-folder='armas'
+				data-info='Armas'
+				data-target='ArmasImg'
+				data-action='show'
+				>Ver armas</a>
+				<a class="waves-effect waves-light btn-small clue-practice" 
+				data-folder='lugar'
+				data-info='Lugares'
+				data-target='LugaresImg'
+				data-action='show'
+				>Ver Lugares</a>
+			</div>		
+			
+			
 		</div>
 
-		<div class="card-panel hoverable">
-			<h5>Manipulando un boton</h5>
+		<div class="row">
+			<div id="PersonajesImg" class="col s12"></div>
+			<div id="ArmasImg" class="col s12"></div>
+			<div id="LugaresImg" class="col s12"></div>				
 
-			<blockquote> En esta función this esta referenciado a un elemento, <code class="language-javascript">button</code>, solo agrega o elimina la clase red y cambia el <code class="language-html">textContent</code> y tambien el 
-				<code class="language-html">dataset.action</code>	
-			</blockquote>
-
-			<blockquote> Al final devuelve en su return si agrego ó no la clase red.
-			</blockquote>
-			<ul class="collapsible">
-				<li>
-					<div class="collapsible-header"><i class="material-icons">whatshot</i>Ver funcion</div>
-					<div class="collapsible-body">
-						<pre><code class="language-javascript" data-scriptid='cambiar'></code></pre>	
-					</div>
-				</li>
-			</ul>
 		</div>
-
-		<div class="card-panel hoverable">
-			<h5>Invocando a la creacion de imagenes</h5>
-
-			<blockquote>
-				Aqui de nuevo el <code class="language-html">this</code> esta haciendo referencia a un elemento , clona todos los data-custom  como un objecto,
-				tambien esta funcion recibe un elemento que se fijara como el target, limpiandolo de cualquier elemento que pueda tener.
-
-			</blockquote>
-
-			<blockquote> 
-				El <code class="language-html"> data-custom  info </code> , es el que indica que elemento de <code class="language-html">GameClue</code> sera barrido por el <code class="language-html">forEach</code>. El callback que usaremos sera <code class="language-html" >CreateImg</code> , y mandaremos como  <code class="language-html">this</code> , el clone de los data-custom
-			</blockquote>
-			<ul class="collapsible">
-				<li>
-					<div class="collapsible-header"><i class="material-icons">whatshot</i>Ver funcion</div>
-					<div class="collapsible-body">
-						<pre><code class="language-javascript" data-scriptid='invocar'></code></pre>	
-					</div>
-				</li>
-			</ul>
-		</div>
-
-		<div class="card-panel hoverable">
-			<h5>Creando el evento click</h5>
-
-			<blockquote>
-				Selecionados a todos los elementos que tenga la clase <code class="language-html">clue-practice</code>
-			</blockquote>
-
-			<blockquote> 
-				Los barremos con el <code class="language-html">ForEach</code>, y acada elemento le agregamos en su paramentro 
-				<code class="language-html">onclick</code> una funcion que reaciona al click 
-			</blockquote>
-
-			<blockquote> 
-				Esta funcion asiganara los <code class="language-html">this</code> de <code class="language-html">CambiarAccion</code> y <code class="language-html"> createImgs</code> para esto usaremos al <code class="language-html">bind</code>.
-
-				<br>
-				Ademas usando el <code class="language-html">data-custom Target</code>, obtenemos el elemento que usaremos como objectivo de insercion.
-			</blockquote>
-
-			<blockquote> 
-				Verefica que acción debe de hacer , para esto revisa el data-custom <code class="language-html"> action</code>
-				<blockquote>
-					si su action es <span class="red-text">Show</span> usamos la function <code class="language-html">createImages</code>
-				</blockquote> 
-
-					<blockquote>
-					si su action es <span class="red-text">Delete</span>
-					Borramos el contenido del target
-					
-				</blockquote> 
-			</blockquote>
-
-			<blockquote>
-				
-				Al final invocamos el <code class="language-html">acccionButtton</code> para indicarle  como debe de actuar en adelante el botón.
-			</blockquote>
-			<ul class="collapsible">
-				<li>
-					<div class="collapsible-header"><i class="material-icons">whatshot</i>Ver funcion</div>
-					<div class="collapsible-body">
-						<pre><code class="language-javascript" data-scriptid='click-event'></code></pre>	
-					</div>
-				</li>
-			</ul>
-		</div>
-
-
-
 
 		<div>
-			<a class="waves-effect waves-light btn-small clue-practice" 
-			data-folder='personajes'
-			data-info='Personajes'
-			data-target='PersonajesImg'
-			data-action='show'
-			>Ver personajes</a>
-			<a class="waves-effect waves-light btn-small clue-practice" 
-			data-folder='armas'
-			data-info='Armas'
-			data-target='ArmasImg'
-			data-action='show'
-			>Ver armas</a>
-			<a class="waves-effect waves-light btn-small clue-practice" 
-			data-folder='lugar'
-			data-info='Lugares'
-			data-target='LugaresImg'
-			data-action='show'
-			>Ver Lugares</a>
-			<div id="PersonajesImg"></div>
-			<div id="ArmasImg"></div>
-			<div id="LugaresImg"></div>
+			<ul class="collapsible">
 
-		</div>
+				<li>
+					<div class="collapsible-header"><i class="material-icons">whatshot</i>Informacion en un objecto</div>
+					<div class="collapsible-body">
+
+						<blockquote>
+							En esta pagina esta declarado este objecto :<span class="chip"> ClueGame</span>
+							<p>Sabemos por la forma que esta declarado, se puede considerar
+								parte del <span class="red-text chip">Global Scope</span></p>
+							</blockquote>
+							<pre><code class="language-javascript" data-scriptid ='objecto'></code></pre>
+
+						</div>
+					</li>
+				</ul>
 
 
+				<div class="card-panel hoverable">
+					<h5>Creando  images</h5>
+
+					<blockquote>Esta funcion , recibe un parametro <span class="chip"> nameImage </span> y usa la variable global 
+						<span class="chip"> folderImg </span>y el parametro que es parte del this <span class="chip">folder</span>
+						para crear el <span class="red-text">SRC</span> del elemento img que esta creando
+					</blockquote>
+
+
+					<blockquote>
+						<code class="language-javascript">this.target</code> representa un elemento, que es parte del dom, al que se le insertara, la nueva imagen
+						recien creada
+					</blockquote>
+
+					<ul class="collapsible">
+						<li>
+							<div class="collapsible-header"><i class="material-icons">whatshot</i>Ver funcion</div>
+							<div class="collapsible-body">
+								<pre><code class="language-javascript" data-scriptid='CreateImg'></code></pre>	
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="card-panel hoverable">
+					<h5>Manipulando un boton</h5>
+
+					<blockquote> En esta función this esta referenciado a un elemento, <code class="language-javascript">button</code>, solo agrega o elimina la clase red y cambia el <code class="language-html">textContent</code> y tambien el 
+						<code class="language-html">dataset.action</code>	
+					</blockquote>
+
+					<blockquote> Al final devuelve en su return si agrego ó no la clase red.
+					</blockquote>
+					<ul class="collapsible">
+						<li>
+							<div class="collapsible-header"><i class="material-icons">whatshot</i>Ver funcion</div>
+							<div class="collapsible-body">
+								<pre><code class="language-javascript" data-scriptid='cambiar'></code></pre>	
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="card-panel hoverable">
+					<h5>Invocando a la creacion de imagenes</h5>
+
+					<blockquote>
+						Aqui de nuevo el <code class="language-html">this</code> esta haciendo referencia a un elemento , clona todos los data-custom  como un objecto,
+						tambien esta funcion recibe un elemento que se fijara como el target, limpiandolo de cualquier elemento que pueda tener.
+
+					</blockquote>
+
+					<blockquote> 
+						El <code class="language-html"> data-custom  info </code> , es el que indica que elemento de <code class="language-html">GameClue</code> sera barrido por el <code class="language-html">forEach</code>. El callback que usaremos sera <code class="language-html" >CreateImg</code> , y mandaremos como  <code class="language-html">this</code> , el clone de los data-custom
+					</blockquote>
+					<ul class="collapsible">
+						<li>
+							<div class="collapsible-header"><i class="material-icons">whatshot</i>Ver funcion</div>
+							<div class="collapsible-body">
+								<pre><code class="language-javascript" data-scriptid='invocar'></code></pre>	
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="card-panel hoverable">
+					<h5>Creando el evento click</h5>
+
+					<blockquote>
+						Selecionados a todos los elementos que tenga la clase <code class="language-html">clue-practice</code>
+					</blockquote>
+
+					<blockquote> 
+						Los barremos con el <code class="language-html">ForEach</code>, y acada elemento le agregamos en su paramentro 
+						<code class="language-html">onclick</code> una funcion que reaciona al click 
+					</blockquote>
+
+					<blockquote> 
+						Esta funcion asiganara los <code class="language-html">this</code> de <code class="language-html">CambiarAccion</code> y <code class="language-html"> createImgs</code> para esto usaremos al <code class="language-html">bind</code>.
+
+						<br>
+						Ademas usando el <code class="language-html">data-custom Target</code>, obtenemos el elemento que usaremos como objectivo de insercion.
+					</blockquote>
+
+					<blockquote> 
+						Verefica que acción debe de hacer , para esto revisa el data-custom <code class="language-html"> action</code>
+						<blockquote>
+							si su action es <span class="red-text">Show</span> usamos la function <code class="language-html">createImages</code>
+						</blockquote> 
+
+						<blockquote>
+							si su action es <span class="red-text">Delete</span>
+							Borramos el contenido del target
+
+						</blockquote> 
+					</blockquote>
+
+					<blockquote>
+
+						Al final invocamos el <code class="language-html">acccionButtton</code> para indicarle  como debe de actuar en adelante el botón.
+					</blockquote>
+					<ul class="collapsible">
+						<li>
+							<div class="collapsible-header"><i class="material-icons">whatshot</i>Ver funcion</div>
+							<div class="collapsible-body">
+								<pre><code class="language-javascript" data-scriptid='click-event'></code></pre>	
+							</div>
+						</li>
+					</ul>
+				</div>
 
 
 
 
-		<script type="text/javascript" id="objecto">
-			const folderImg = '/img/clue';
-			let ClueGame = {}
-			ClueGame.Personajes =[
-			'azulino.png',
-			'blanki.png',
-			'moradillo.png',
-			'mostaza.png',
-			'scarlet.png',
-			'verdi.png',
-			]
-
-
-			ClueGame.Armas = [
-			'candelabro.png',
-			'daga.png',
-			'llave_inglesa.png',
-			'pistola.png',
-			'soga.png',
-			'tuberia.png',
-			];
-
-			ClueGame.Lugares = [
-			'baño.png',
-			'cocina.png',
-			'comedor.png',
-			'estudio.png',
-			'garage.png',
-			'habitacion.png',
-			'patio.png',
-			'sala.png',
-			'salon-de-juegos.png'
-			];
-		</script>
 
 
 
-		<script type="text/javascript" id="CreateImg">
-			const CreateImg = function( nameImage){ 
-				let NewImg = document.createElement( 'img');
-				NewImg.src =  folderImg+'/'+this.folder+'/' +nameImage;
-				this.target.appendChild(NewImg);  
-			}	
-		</script>
-		<script type="text/javascript" id="cambiar">
-			const  CambiarAccion = function(){
-				let ActiveDelete =  this.classList.toggle('red');
-				if(ActiveDelete){
-					this.textContent = 'Borrar ' + this.dataset.info;
-					this.dataset.action ='delete';
-				}else{
-					this.textContent = 'Ver ' + this.dataset.info;
-					this.dataset.action ='show';
-				}
-				return ActiveDelete;
-			};	
-		</script>
-
-		<script type="text/javascript" id="invocar">
-			function createImgs ( Target){
-				const Settings = Object.assign({}, this.dataset);	
-				Settings.target = Target;
-				Target.innerHTML ='';
-				ClueGame[Settings.info].forEach( CreateImg , Settings );
-			}
-		</script>
 
 
 
-		<script type="text/javascript">
 
-			document.addEventListener('readystatechange', event => {
+				<script type="text/javascript" id="objecto">
+					const folderImg = '/img/clue';
+					let ClueGame = {}
+					ClueGame.Personajes =[
+					'azulino.png',
+					'blanki.png',
+					'moradillo.png',
+					'mostaza.png',
+					'scarlet.png',
+					'verdi.png',
+					]
 
-				if (event.target.readyState === "complete") {
-					let ClassScripts = document.querySelectorAll('code');
 
-					Array.from(ClassScripts).map(( data )=>{				
-						if(data.dataset.scriptid){
-							let Script = document.querySelector(  `script[id="${ data.dataset.scriptid}"]`);
+					ClueGame.Armas = [
+					'candelabro.png',
+					'daga.png',
+					'llave_inglesa.png',
+					'pistola.png',
+					'soga.png',
+					'tuberia.png',
+					];
 
-							data.innerHTML =Script.innerHTML;
-							Prism.highlightElement( data );	
+					ClueGame.Lugares = [
+					'baño.png',
+					'cocina.png',
+					'comedor.png',
+					'estudio.png',
+					'garage.png',
+					'habitacion.png',
+					'patio.png',
+					'sala.png',
+					'salon-de-juegos.png'
+					];
+				</script>
+
+
+
+				<script type="text/javascript" id="CreateImg">
+					const CreateImg = function( nameImage){ 
+						let NewImg = document.createElement( 'img');
+						NewImg.src =  folderImg+'/'+this.folder+'/' +nameImage;
+						this.target.appendChild(NewImg);  
+					}	
+				</script>
+				<script type="text/javascript" id="cambiar">
+					const  CambiarAccion = function(){
+						let ActiveDelete =  this.classList.toggle('red');
+						if(ActiveDelete){
+							this.textContent = 'Borrar ' + this.dataset.info;
+							this.dataset.action ='delete';
+						}else{
+							this.textContent = 'Ver ' + this.dataset.info;
+							this.dataset.action ='show';
 						}
+						return ActiveDelete;
+					};	
+				</script>
+
+				<script type="text/javascript" id="invocar">
+					function createImgs ( Target){
+						const Settings = Object.assign({}, this.dataset);	
+						Settings.target = Target;
+						Target.innerHTML ='';
+						ClueGame[Settings.info].forEach( CreateImg , Settings );
+					}
+				</script>
+
+
+
+				<script type="text/javascript">
+
+					document.addEventListener('readystatechange', event => {
+
+						if (event.target.readyState === "complete") {
+							let ClassScripts = document.querySelectorAll('code');
+
+							Array.from(ClassScripts).map(( data )=>{				
+								if(data.dataset.scriptid){
+									let Script = document.querySelector(  `script[id="${ data.dataset.scriptid}"]`);
+
+									data.innerHTML =Script.innerHTML;
+									Prism.highlightElement( data );	
+								}
+							});
+						}
+
 					});
-				}
 
-			});
+				</script>
 
-		</script>
+				<script type="text/javascript" id="click-event">
+					document.querySelectorAll('.clue-practice').forEach(function( elem){
+						elem.onclick = function(){
+							const  acccionButtton = CambiarAccion.bind(this);
+							const  createImages = createImgs.bind(this);
+							const Action = this.dataset.action;	
+							const Target = document.getElementById(this.dataset.target);	
+							if(Action === 'show'){
+								createImages(Target);
+							}
 
-		<script type="text/javascript" id="click-event">
-			document.querySelectorAll('.clue-practice').forEach(function( elem){
-				elem.onclick = function(){
-					const  acccionButtton = CambiarAccion.bind(this);
-					const  createImages = createImgs.bind(this);
-					const Action = this.dataset.action;	
-					const Target = document.getElementById(this.dataset.target);	
-					if(Action === 'show'){
-						createImages(Target);
-					}
+							if(Action === 'delete'){
+								Target.innerHTML = '';
+							}
 
-					if(Action === 'delete'){
-						Target.innerHTML = '';
-					}
+							acccionButtton();
 
-					acccionButtton();
-
-				}
-			})
-		</script>
+						}
+					})
+				</script>

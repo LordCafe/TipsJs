@@ -41,9 +41,9 @@ module.exports = function(app){
 			title: 'Concepto del this',
 			links :{
 				'developer.mozilla' : 'https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/this',
-			   yeisondaza : 'https://yeisondaza.com/entendiendo-this-javascript',
-			   'youtube' : 'https://www.youtube.com/watch?v=gvicrj31JOM',
-			   'https://codeburst.io' : 'https://codeburst.io/javascript-functions-understanding-the-basics-207dbf42ed99'
+				yeisondaza : 'https://yeisondaza.com/entendiendo-this-javascript',
+				'youtube' : 'https://www.youtube.com/watch?v=gvicrj31JOM',
+				'https://codeburst.io' : 'https://codeburst.io/javascript-functions-understanding-the-basics-207dbf42ed99'
 			},
 			footerScrtisps :[
 			'/js/SeeCode.js',
@@ -69,9 +69,9 @@ module.exports = function(app){
 		res.render('school/functions', {
 			title: 'Concepto del this',
 			links :{
-			   yeisondaza : 'https://yeisondaza.com/entendiendo-this-javascript',
-			   'youtube' : 'https://www.youtube.com/watch?v=gvicrj31JOM',
-			   'https://codeburst.io' : 'https://codeburst.io/javascript-functions-understanding-the-basics-207dbf42ed99'
+				yeisondaza : 'https://yeisondaza.com/entendiendo-this-javascript',
+				'youtube' : 'https://www.youtube.com/watch?v=gvicrj31JOM',
+				'https://codeburst.io' : 'https://codeburst.io/javascript-functions-understanding-the-basics-207dbf42ed99'
 			},
 			footerScrtisps :[
 			'/js/SeeCode.js',
@@ -81,7 +81,7 @@ module.exports = function(app){
 	});
 
 
-		app.get('/school/methods', function(req, res){
+	app.get('/school/methods', function(req, res){
 		res.render('school/methods', {
 			title: 'Metodos',
 			links :{
@@ -128,7 +128,42 @@ module.exports = function(app){
 			},
 			footerScrtisps :[
 			'/js/practicas/practicas.js',
-						
+
+			]
+		});
+	});
+
+
+	app.get('/school/eventos', function(req, res){
+		res.render('school/eventos', {
+			title: 'Practica',
+			links :{
+				'Mozilla' : 'https://developer.mozilla.org/es/docs/Referencia_DOM_de_Gecko/Introducci%C3%B3n',
+				'sitepoint' :'https://www.sitepoint.com/dom-manipulation-vanilla-javascript-no-jquery/',
+			},
+			footerScrtisps :[
+			
+
+
+			]
+		});
+	});
+
+
+
+	app.get('/school/practice/class', function(req, res){
+		res.render('school/practices/Class', {
+			title: 'Practica',
+			links :{
+				'Mozilla' : 'https://developer.mozilla.org/es/docs/Referencia_DOM_de_Gecko/Introducci%C3%B3n',
+				'sitepoint' :'https://www.sitepoint.com/dom-manipulation-vanilla-javascript-no-jquery/',
+			},
+			footerScrtisps :[
+			
+			'/js/practicas/ClueGame.js',
+			'/js/practicas/practicas.js',
+			
+
 			]
 		});
 	});
