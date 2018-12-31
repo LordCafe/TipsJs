@@ -168,5 +168,21 @@ module.exports = function(app){
 		});
 	});
 
+	app.get('/school/practice/createclass', function(req, res){
+		res.render('school/practices/createClass', {
+			title: 'creando una clase javascripts',
+			links :{
+			
+			},
+			footerScrtisps :[
+			
+			'/js/practicas/ClueGame.js',
+			'/js/custom/jsonp.js'
+			
+
+			]
+		});
+	});
+
     //other routes..
 }
