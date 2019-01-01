@@ -43,16 +43,28 @@
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-.myrow{
-	background:  red;
-	width: 100%;
-	height: 30%;
+body {
+     display: flex;
+     min-height: 100vh;
+     flex-direction: column;
+ }
+ main {
+     flex: 1 0 auto;
+ }
+
+ #entry {
+    display: table; /* Make the container element behave like a table */
+    width: 100%; /* Set full-width to expand the whole page */
 }
 
-.mycol{
-	display: inline;
-	width: 30%;
-	height:100%;
-	background: blue;
+.col {
+    display: table-cell; /* Make elements inside the container behave like table cells */
+}
 
+#entry .card .card-image img{
+  height: 200px;
+}
+
+#buttonMore nav {
+  width: 10%;
 }

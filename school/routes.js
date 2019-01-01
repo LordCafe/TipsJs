@@ -174,10 +174,10 @@ module.exports = function(app){
 			links :{
 			
 			},
-			footerScrtisps :[
-			
+			footerScrtisps :[			
 			'/js/practicas/ClueGame.js',
-			'/js/custom/jsonp.js'
+			'/js/custom/jsonp.js',
+			'/js/practicas/render.js'
 			
 
 			]

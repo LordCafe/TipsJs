@@ -20,21 +20,23 @@
   </head>
 
   <body>
-   
-    {{> school/nav}}
+    <header>
+     {{> school/nav}}   
+   </header>
+   <main>
     <div class="container">
-     <a href="#" data-target="slide-out" class="sidenav-trigger">Settings</a>
+
      {{{body}}}
    </div>
-   
+ </main>
 
-   {{>footerScrtisps}}
-   <script type="text/javascript">
-     Prism.plugins.NormalizeWhitespace.setDefaults({
-      'remove-trailing': true,
-      'remove-indent': true,
-      'left-trim': true,
-      'right-trim': true,
+ {{>footerScrtisps}}
+ <script type="text/javascript">
+   Prism.plugins.NormalizeWhitespace.setDefaults({
+    'remove-trailing': true,
+    'remove-indent': true,
+    'left-trim': true,
+    'right-trim': true,
   /*'break-lines': 80,
   'indent': 2,
   'remove-initial-line-feed': false,
@@ -42,11 +44,14 @@
   'spaces-to-tabs': 4*/
 });
 
-  document.addEventListener('DOMContentLoaded', function() {
+   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, {});
+    var instancesNav = M.Sidenav.init(elems, {});
     var collapsible = document.querySelectorAll('.collapsible');
     var instances = M.Collapsible.init(collapsible, {});
+    document.getElementById('desktopMenu').addEventListener('click', function(){
+      instancesNav[0].open();
+    });
   });
 </script>
 {{> school/footer}}
