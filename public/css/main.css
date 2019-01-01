@@ -44,27 +44,44 @@
 }
 
 body {
-     display: flex;
-     min-height: 100vh;
-     flex-direction: column;
- }
- main {
-     flex: 1 0 auto;
- }
+ display: flex;
+ min-height: 100vh;
+ flex-direction: column;
+}
+main {
+ flex: 1 0 auto;
+}
 
- #entry {
-    display: table; /* Make the container element behave like a table */
-    width: 100%; /* Set full-width to expand the whole page */
+#entry {
+  display: table; /* Make the container element behave like a table */
+  width: 100%; /* Set full-width to expand the whole page */
 }
 
 .col {
-    display: table-cell; /* Make elements inside the container behave like table cells */
+  display: table-cell; /* Make elements inside the container behave like table cells */
 }
 
 #entry .card .card-image img{
   height: 200px;
 }
 
-#buttonMore nav {
+#buttonMore  nav {
   width: 10%;
 }
+
+
+.opacitycero{
+  opacity: 0.5;
+}
+.fadeInExample { 
+  animation-name: fadeIn;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+
+@keyframes fadeIn {
+ 0% {opacity: 0;}
+ 100% {opacity: 1;}
+} 
