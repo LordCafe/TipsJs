@@ -1,3 +1,7 @@
+:root {
+  --main-bg-color: #0a3d62;
+}
+
 #slide-out{
 	width: 80%;
 	overflow: hidden;
@@ -52,6 +56,15 @@ main {
  flex: 1 0 auto;
 }
 
+
+nav{
+  background-color : var(--main-bg-color)
+
+}
+
+.page-footer{
+ background-color : var(--main-bg-color)
+}
 #entry {
   display: table; /* Make the container element behave like a table */
   width: 100%; /* Set full-width to expand the whole page */
@@ -71,7 +84,7 @@ main {
 
 
 .opacitycero{
-  opacity: 0.5;
+  opacity: 0.2;
 }
 .fadeInExample { 
   animation-name: fadeIn;

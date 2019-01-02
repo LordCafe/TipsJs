@@ -32,47 +32,15 @@
  }
 
 
- JsonpApi.limit = 5;
+ JsonpApi.limit = 15;
 
 
  let MyNotes = {};
  MyNotes.Notes = {};
- MyNotes.Getdata = function( data, type ){
+ MyNotes.Getdata = function( data ){
  	let MyNote = this.Notes[data.id];
- 	let All = data.parentElement.querySelectorAll('.demoClass');
- 	this.Actions(type , All );	
- 	data.classList.remove('opacitycero');
- 	
+ 	console.log(MyNote);
  }
- MyNotes.Each = function(dom , callback  ){
-   dom.forEach( function(elem ){
-   	  if(typeof callback === 'function'){
-   	  	callback( elem);
-   	  }
-   })
- }
- MyNotes.Actions = function(type, doms){
- 	switch (type) {
- 		case 'mouseover':
- 			this.Each( doms,function( dom ){
- 				dom.classList.add('opacitycero');
- 			});
- 			break;
-
- 		case 'mouseout':
- 			this.Each( doms, function(dom ){
- 				dom.classList.remove('opacitycero');
- 				
- 			});
- 			break;
- 		default:
- 			// statements_def
- 			break;
- 	}
- }
-
-
-
 
  let InjectNotes = function( note  ){
  	note.num = this.childElementCount + 1;
@@ -80,15 +48,7 @@
  	node.classList.add('col', 's4', 'demoClass');
  	node.id = note.id;
  	node.innerHTML = TemplateExample(note);
- 	node.addEventListener( 'mouseover',function(event){
- 	 	console.log( event.type)
- 	 	MyNotes.Getdata(this, event.type )
- 	})
-
- 	node.addEventListener( 'mouseout',function(event){
- 	 	console.log( event.type)
- 	 	MyNotes.Getdata(this, event.type )
- 	})
+ 	node.addEventListener( 'click', function( event ){ MyNotes.Getdata(this) }) 		
  	MyNotes.Notes[note.id] = Object.assign( {dom :  node }, note);	
  	this.appendChild( node );
  }
